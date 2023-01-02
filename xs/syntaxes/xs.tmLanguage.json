@@ -1,0 +1,112 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "XS Script Language",
+	"patterns": [
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#functions"
+		},
+		{
+			"include": "#variables"
+		},
+		{
+			"include": "#strings"
+		},
+    {
+      "name": "constant.numeric.xs",
+      "match": "-?\\b((([0-9]+\\.?[0-9]*)|(\\.[0-9]+))((e|E)(\\+|-)?[0-9]+)?)\\b"
+    }
+	],
+	"repository": {
+    "comments": {
+			"patterns": [
+        {
+          "begin": "{",
+          "beginCaptures": {
+            "0": {
+                  "name": "punctuation.definition.comment.begin.xs"
+            }
+          },
+          "end": "}",
+          "endCaptures": {
+            "0": {
+                  "name": "punctuation.definition.comment.end.xs"
+            }
+          },
+          "name": "comment.block.xs"
+        },
+        {
+          "begin": "\/\/",
+          "beginCaptures": {
+            "0": {
+                  "name": "punctuation.definition.comment.xs"
+            }
+          },
+          "end": "\\n",
+          "name": "comment.line.xs"
+        }
+      ]  
+    },
+		"keywords": {
+			"patterns": [
+        {
+				  "name": "keyword.control.xs",
+				  "match": "(?i)\\b(Array|Arrays|Bool|Double|Float|Input|Inputs|Int|IntraBarPersist|Numeric|NumericArray|NumericArrayRef|NumericRef|NumericSeries|NumericSimple|Ret|RetMsg|RetVal|String|StringArray|StringArrayRef|StringRef|StringSeries|StringSimple|TrueFalse|TrueFalseArray|TrueFalseArrayRef|TrueFalseRef|TrueFalseSeries|TrueFalseSimpleVar|Variable|Variables|Vars|Above|And|Begin|Below|Cross|Cross|Above|Cross|Below|Cross|Over|Cross|Under|Crosses|Crosses|Above|Crosses|Below|Crosses|Over|Crosses|Under|DownTo|Else|End|False|For|If|Not|Or|Over|Then|To|True|Under|While|Xor|break|case|default|once|repeat|return|switch|until)\\b"
+			  },
+        {
+          "name": "keyword.skipword.xs",
+          "match": "(?i)\\b(A|An|At|Based|By|Does|From|Is|Of|On|Place|Than|The|Was)\\b"
+        },
+        {
+          "name": "keyword.operator.xs",
+          "match": "(\\*|\\-|\\+|=|<=|>=|<>|\\+=|\\-=)"
+        }
+      ]
+		},
+    "functions": {
+			"patterns": [
+        {
+          "name": "keyword.bif.xs",
+          "match": "(?i)\\b(AbsValue|ArcCosine|ArcSine|ArcTangent|Array_Compare|Array_Copy|Array_GetMaxIndex|Array_GetType|Array_SetMaxIndex|Array_SetValRange|Array_Sort|Array_Sum|AvgList|BarFreq|BarInterval|Ceiling|CoTangent|Combination|Cos|Cosine|CurrentBar|CurrentDate|CurrentTime|DataAlign|DateAdd|DateDiff|DateToJulian|DateToString|DateValue|DayOfMonth|DayOfWeek|EncodeDate|EncodeTime|ExecOffset|ExpValue|Factorial|File|Floor|FormatDate|FormatTime|FracPortion|GetField|GetFieldDate|GetQuote|Hour|InStr|IntPortion|JulianToDate|LeftStr|Log|LowerStr|MaxBarsBack|MaxList|MaxList2|MidStr|MinList|MinList2|Minute|Mod|Month|Neg|NoPlot|NthMaxList|NthMinList|NumToStr|OutputField[0-9]{0,2}|Permutation|Plot[0-9]{0,2}|Pos|Power|Print|RaiseRunTimeError|Random|RightStr|Round|Second|SetBarBack|SetBarFreq|SetInputName|SetOutputName[0-9]{0,2}|SetPlotLabel|SetTotalBar|Sign|Sin|Sine|Square|SquareRoot|StrLen|StrToNum|StringToDate|StringToTime|SumList|Symbol|SymbolName|Tan|Tangent|Text|TimeAdd|TimeDiff|TimeToString|TimeValue|UpperStr|UserID|WeekOfMonth|WeekOfYear|Year|AddSpread|Alert|Buy|Cover|DefaultBuyPrice|DefaultSellPrice|FilledAvgPrice|FilledRecordBS|FilledRecordCount|FilledRecordDate|FilledRecordIsRealtime|FilledRecordPrice|FilledRecordQty|FilledRecordTime|IsMarketPrice|Market|Sell|SetPosition|Short)\\b"
+			  },
+        {
+          "name": "keyword.sysfnc.xs",
+          "match": "(?i)\\b(ACC|ADI|ADO|AR|ATR|Angle|Average|AverageIF|AvgDeviation|AvgPrice|BR|BarsLast|Bias|BiasDiff|BollingerBand|CCI|CloseD|CloseH|CloseM|CloseQ|CloseW|CloseY|CoefficientR|CommodityChannel|Correlation|CountIf|CountIfARow|Covariance|CrossOver|CrossUnder|DIF|DMO|DPO|D_Value|DaysToExpiration|DirectionMovement|DwLimit|EMA|EMP|ERC|Extremes|ExtremesArray|Filter|GetBarOffset|GetLastTradeDate|HL_Osc|HighD|HighDays|HighH|HighM|HighQ|HighW|HighY|Highest|HighestArray|HighestBar|IFF|K_Value|KeltnerLB|KeltnerMA|KeltnerUB|LastDayOfMonth|LinearReg|LinearRegAngle|LinearRegSlope|LowD|LowDays|LowH|LowM|LowQ|LowW|LowY|Lowest|LowestArray|LowestBar|MACD|MAM|MA_Osc|MI|MO|MTM|MTM_MA|MoM|Momentum|NthDayofMonth|NthExtremes|NthExtremesArray|NthHighest|NthHighestArray|NthHighestBar|NthLowest|NthLowestArray|NthLowestBar|OHLCPeriodsAgo|OpenD|OpenH|OpenM|OpenQ|OpenW|OpenY|PSY|PercentR|QoQ|RC|RSI|RSV|RSquare|Range|RateOfChange|SAR|SimpleHighest|SimpleLowest|StandardDev|Stochastic|Summation|SummationIf|SwingHigh|SwingHighBar|SwingLow|SwingLowBar|TRIX|TechScore|TimeSeriesForecast|TrueAll|TrueAny|TrueCount|TrueHigh|TrueLow|TrueRange|TypicalPrice|UpLimit|VA|VAO|VHF|VPT|VR|VVA|VariancePS|WAD|WeightedClose|XAverage|YoY|formatMQY)\\b"  
+        }
+      ]
+    },
+    "variables": {
+			"patterns": [
+        {
+          "name": "variable.builtin.xs",
+          "match": "(?i)\\b(Value[0-9]{1,3}|Condition[0-9]{1,3})|Position|Filled\\b"
+  			},
+        {
+          "name": "variable.field.xs",
+          "match": "(?i)\\b(date|time|o|open|c|close|l|low|h|high|v|volume|OpenInterest|OI|q_DailyOpen|q_DailyHigh|q_DailyLow|q_DailyVolume|q_RefPrice|q_Last|q_Bid|q_Ask|q_BidAskFlag|q_TickVolume|q_PreTotalVolume|q_PriceChangeRatio|q_InSize|q_OutSize|q_BestBid1|q_BestBid2|q_BestBid3|q_BestBid4|q_BestBid5|q_BestAsk1|q_BestAsk2|q_BestAsk3|q_BestAsk4|q_BestAsk5|q_BestBidSize|q_BestAskSize|q_BestBidSize1|q_BestBidSize2|q_BestBidSize3|q_BestBidSize4|q_BestBidSize5|q_SumBidSize|q_BestAskSize1|q_BestAskSize2|q_BestAskSize3|q_BestAskSize4|q_BestAskSize5|q_SumAskSize|q_DailyUplimit|q_DailyDownlimit|q_DayAmplitude|q_PreMatch1|q_PreMatch2|q_PreMatch3|q_PreMatch4|q_BidAskDiff|q_OrderRatio|q_TotalAmount|q_VolumeRatio|q_Basis|q_Spread|q_RemainDays|q_CulBidTicks|q_CulAskTicks|q_AvgLongUnits|q_AvgShortUnits|q_RemainTradingDays|q_CashDirect|q_BidUnits|q_AskUnits|q_MatchUnit|q_UpSecurities|q_DownSecurities|q_UpLimitSecs|q_DownLimitSecs|q_ExpiredDate|q_LastTradingDate|q_StrikePrice|q_MinTradingShares|q_CurrentShareCapital|q_NetValuePerShare|q_GrossMarginRate|q_OpeProfitMarginRate|q_OpeRevenuePerShare|q_Close1Wago|q_Close1Mago|q_Close3Mago|q_Close1Yago|q_CloseOfLastYear|q_IntrinsicValue|q_TimeValue|q_Delta|q_Gamma|q_Theta|q_Vega|q_RHO|q_TheoreticalPrice|q_CPTradeRatio|q_CPOIRatio|q_Volatility|q_IOofMoney|q_Leverage|q_ImpliedVolatilityonBuy|q_ImpliedVolatilityonSell|q_TargetPrice|q_TargetChange|q_TargetChangeRatio|q_BoughtLotsAtOpen|q_VolatilityDiff|q_SoldLotsAtOpen|q_BidAskDiffRatio|q_Profitability|q_PremiumRatio|q_BreakEvenPoint|q_ContractRatio|q_RevenueYoY|q_RevenueGrowth|q_CurrentEPS|q_CulBuyTicks|q_BoughtTickAtOpen|q_CulSellTicks|q_SoldTickAtOpen|q_SoldAverageAtOpen|q_CurrentROE|q_TotalTicks|q_BoughtAverageAtOpen|q_CurrentCapitalin100Million|q_MarketCapin100Million|q_RevenueMonth|q_FinancialStatementsTime|q_AvgPrice|q_AvgDealedShare|q_CulMatchTicks)\\b"
+        },
+        {
+          "name": "variable.constant.xs",
+          "match": "(?i)\\b(PI|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)\\b"
+        }                
+      ]
+    },
+		"strings": {
+			"name": "string.quoted.double.xs",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.xs",
+					"match": "\\\\."
+				}
+			]
+		}
+	},
+	"scopeName": "source.xs"
+}

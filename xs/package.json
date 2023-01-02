@@ -1,0 +1,25 @@
+{
+  "name": "xs",
+  "displayName": "XS",
+  "description": "XS Script Language",
+  "version": "1.0.0",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "xs",
+      "aliases": ["XS Script Language", "xs"],
+      "extensions": [".xs"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "xs",
+      "scopeName": "source.xs",
+      "path": "./syntaxes/xs.tmLanguage.json"
+    }]
+  }
+}
