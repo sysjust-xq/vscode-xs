@@ -106,7 +106,7 @@
           "name": "punctuation.definition.string.end"
         }
       },
-      "match": "(N)?(\")[^\"]*(\")"
+      "match": "(\")[^\"]*(\")"
     }
 	},
 	"scopeName": "source.xs"
