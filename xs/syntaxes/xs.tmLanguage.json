@@ -56,7 +56,7 @@
 			"patterns": [
         {
 				  "name": "keyword.control.xs",
-				  "match": "(?i)\\b(Array|Arrays|Bool|Double|Float|Input|Inputs|Int|IntraBarPersist|Numeric|NumericArray|NumericArrayRef|NumericRef|NumericSeries|NumericSimple|Ret|RetMsg|RetVal|String|StringArray|StringArrayRef|StringRef|StringSeries|StringSimple|TrueFalse|TrueFalseArray|TrueFalseArrayRef|TrueFalseRef|TrueFalseSeries|TrueFalseSimpleVar|Variable|Variables|Vars|Above|And|Begin|Below|Cross|Cross|Above|Cross|Below|Cross|Over|Cross|Under|Crosses|Crosses|Above|Crosses|Below|Crosses|Over|Crosses|Under|DownTo|Else|End|False|For|If|Not|Or|Over|Then|To|True|Under|While|Xor|break|case|default|once|repeat|return|switch|until)\\b"
+				  "match": "(?i)\\b(Array|Arrays|Bool|Double|Float|Input|Inputs|Int|IntraBarPersist|Numeric|NumericArray|NumericArrayRef|NumericRef|NumericSeries|NumericSimple|Ret|RetMsg|RetVal|String|StringArray|StringArrayRef|StringRef|StringSeries|StringSimple|TrueFalse|TrueFalseArray|TrueFalseArrayRef|TrueFalseRef|TrueFalseSeries|TrueFalseSimpleVar|Variable|Variables|Vars|Var|Above|And|Begin|Below|Cross|Cross|Above|Cross|Below|Cross|Over|Cross|Under|Crosses|Crosses|Above|Crosses|Below|Crosses|Over|Crosses|Under|DownTo|Else|End|False|For|If|Not|Or|Over|Then|To|True|Under|While|Xor|break|case|default|once|repeat|return|switch|until)\\b"
 			  },
         {
           "name": "keyword.skipword.xs",
@@ -96,17 +96,18 @@
         }                
       ]
     },
-		"strings": {
-			"name": "string.quoted.double.xs",
-			"begin": "\"",
-			"end": "\"",
-			"patterns": [
-				{
-					"name": "constant.character.escape.xs",
-					"match": "\\\\."
-				}
-			]
-		}
+    "strings": {
+			"name": "string.double.quoted.xs",
+      "captures": {
+        "2": {
+          "name": "punctuation.definition.string.begin"
+        },
+        "3": {
+          "name": "punctuation.definition.string.end"
+        }
+      },
+      "match": "(N)?(\")[^\"]*(\")"
+    }
 	},
 	"scopeName": "source.xs"
 }
