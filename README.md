@@ -2,13 +2,13 @@
 
 Visual Studio Code extension providing syntax highlighting for [XS script language](https://www.xq.com.tw/School.aspx).
 
-![DarkTheme](https://raw.githubusercontent.com/derektu/vscode-xs/master/images/dark.png)
+![DarkTheme](https://raw.githubusercontent.com/sysjust-xq/vscode-xs/master/images/dark.png)
 
-![LightTheme](https://raw.githubusercontent.com/derektu/vscode-xs/master/images/light.png)
+![LightTheme](https://raw.githubusercontent.com/sysjust-xq/vscode-xs/master/images/light.png)
 
 ## Installation
 
-You can install this extension from VSCode Marketplace(*TODO:補上link*). 
+You can install this extension from [VSCode Marketplace](https://marketplace.visualstudio.com/items?itemName=sysjust-xq.xs).
 
 Or you can install manually by copying everything inside xs subfolder to <HomeDirectory>\.vscode\.extensions\xs:
 
