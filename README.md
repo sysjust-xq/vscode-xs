@@ -51,5 +51,6 @@ These are the token scopes that you can customize:
 
 ## License
 
-[MIT](https://raw.githubusercontent.com/derektu/vscode-xs/blob/master/LICENSE)
+[MIT](https://raw.githubusercontent.com/derektu/vscode-xs/master/LICENSE)
 
+        
