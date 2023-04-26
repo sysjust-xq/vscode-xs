@@ -1,25 +1,40 @@
 {
-  "name": "xs",
-  "displayName": "XS",
-  "description": "XS Script Language",
-  "version": "1.0.1",
-  "engines": {
-    "vscode": "^1.56.2"
-  },
-  "categories": [
-    "Programming Languages"
-  ],
-  "contributes": {
-    "languages": [{
-      "id": "xs",
-      "aliases": ["XS Script Language", "xs"],
-      "extensions": [".xs"],
-      "configuration": "./language-configuration.json"
-    }],
-    "grammars": [{
-      "language": "xs",
-      "scopeName": "source.xs",
-      "path": "./syntaxes/xs.tmLanguage.json"
-    }]
-  }
+	"name": "xs",
+	"publisher": "sysjust-xq",
+	"displayName": "XS",
+	"description": "XS Script Language",
+	"icon": "images/xsIcon.png",
+	"version": "1.0.1",
+	"engines": {
+		"vscode": "^1.56.2"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/sysjust-xq/vscode-xs.git"
+	},
+	"categories": [
+		"Programming Languages"
+	],
+	"contributes": {
+		"languages": [
+			{
+				"id": "xs",
+				"aliases": [
+					"XS Script Language",
+					"xs"
+				],
+				"extensions": [
+					".xs"
+				],
+				"configuration": "./language-configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "xs",
+				"scopeName": "source.xs",
+				"path": "./syntaxes/xs.tmLanguage.json"
+			}
+		]
+	}
 }
