@@ -4,7 +4,7 @@
   "description": "XS Script Language",
   "version": "1.0.0",
   "engines": {
-    "vscode": "^1.74.0"
+    "vscode": "^1.56.2"
   },
   "categories": [
     "Programming Languages"
